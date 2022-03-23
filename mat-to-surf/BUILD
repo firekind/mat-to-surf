@@ -22,7 +22,10 @@ cc_binary(
     data = [
         ":data",
         "//mat-to-surf/gst:libgstmattosurf.so",
-    ]
+    ],
+    linkopts = [
+        "-pthread",
+    ],
 )
 
 pkgfy(
