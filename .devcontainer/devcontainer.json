@@ -1,0 +1,17 @@
+{
+    "name": "mat-to-surf",
+    "dockerFile": "../Dockerfile",
+    "runArgs": [
+        "--gpus=all",
+        "-e=DISPLAY=${env:DISPLAY}",
+        "-v=/tmp/.X11-unix:/tmp/.X11-unix",
+        "--privileged",
+        "--net=host",
+        "-v=/dev:/dev"
+    ],
+    "mounts": [
+        "source=mat-to-surf-build-cache,target=/root"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/mat-to-surf,type=bind",
+    "workspaceFolder": "/workspace/mat-to-surf"
+}

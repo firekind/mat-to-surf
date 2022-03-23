@@ -1,0 +1,14 @@
+build -c opt --crosstool_top=//toolchain
+build --strip=always
+
+build --cpu=k8
+build --define=cpu=k8
+build --action_env=target_platform="x86_64"
+
+build:x86_64 --cpu=k8
+build:x86_64 --define=cpu=k8
+build:x86_64 --action_env=target_platform="x86_64"
+
+build:aarch64 --cpu=aarch64
+build:aarch64 --define=cpu=aarch64
+build:aarch64 --action_env=target_platform="jetpack46"
