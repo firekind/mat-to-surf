@@ -28,9 +28,9 @@ int main() {
 
     gst_init(nullptr, nullptr);
     GstRegistry* registry = gst_registry_get();
-    gst_registry_scan_path(registry, "mat-to-surf/gst");
+    gst_registry_scan_path(registry, ".");
 
-    std::ifstream file("mat-to-surf/pipeline.txt");
+    std::ifstream file("pipeline.txt");
     std::string content;
     getline(file, content);
     GstElement* pipeline = gst_parse_launch(content.c_str(), nullptr);

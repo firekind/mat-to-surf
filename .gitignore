@@ -1,2 +1,4 @@
-bazel-*
+mat-to-surf/**/*.o
+mat-to-surf/**/*.so
+*.out
 *.engine

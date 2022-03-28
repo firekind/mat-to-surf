@@ -201,7 +201,7 @@ extern "C" bool NvDsInferParseCustomCenterNetFace(std::vector<NvDsInferLayerInfo
 	//	float scale_h = (float)height / (float)d_h;
 	std::vector<FaceInfo> faces_tmp;
 	std::vector<FaceInfo> faces;
-	for (int i = 0; i < ids.size() / 2; i++)
+	for (unsigned int i = 0; i < ids.size() / 2; i++)
 	{
 		int id_h = ids[2 * i];
 		int id_w = ids[2 * i + 1];
@@ -235,7 +235,7 @@ extern "C" bool NvDsInferParseCustomCenterNetFace(std::vector<NvDsInferLayerInfo
 
 	const float threshold = 0.3;
 	nms(faces_tmp, faces, threshold);
-	for (int k = 0; k < faces.size(); k++)
+	for (unsigned int k = 0; k < faces.size(); k++)
 	{
 		NvDsInferObjectDetectionInfo object;
 		/* Clip object box co-ordinates to network resolution */

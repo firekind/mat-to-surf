@@ -4,16 +4,22 @@ Test repo for this [deepstream issue](https://forums.developer.nvidia.com/t/memo
 
 # Run
 
-run the application with the following command:
+To run the application on jetson, first build the custom parser for centerface:
 
 ```
-$ bazel run //mat-to-surf
+$ cd mat-to-surf/customparser/centerface
+$ CUDA_VER=10.2 make
 ```
 
-To package it for jetson, run 
+once done, build the application
 
 ```
-$ bazel build --config aarch64 //mat-to-surf:pkg
+$ cd ../../
+$ CUDA_VER=10.2 make
 ```
 
-this will create a tar file in `bazel-bin/mat-to-surf/pkg.tar`. The app can be run on the docker image: nvcr.io/nvidia/deepstream-l4t:6.0.1-base (sha256:c9ca4d742c0d142db6db4e84ed0192f94cf4a883e3e4f75c4da40c5704b56a5a). Run `apt install libtbb2` before running the application. You'll have to update the paths in `mat-to-surf/pipeline.txt` and in `mat-to-surf/config/centerface.txt`
+then run the application 
+
+```
+$ ./a.out
+```

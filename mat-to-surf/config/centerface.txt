@@ -16,5 +16,5 @@ cluster-mode=4
 maintain-aspect-ratio=1
 output-blob-names=537;538;539;540
 parse-bbox-func-name=NvDsInferParseCustomCenterNetFace
-custom-lib-path=/workspace/mat-to-surf/bazel-bin/mat-to-surf/customparser/centerface/libcenterfaceparser.so
+custom-lib-path=../customparser/centerface/libcenterfaceparser.so
 output-tensor-meta=1
